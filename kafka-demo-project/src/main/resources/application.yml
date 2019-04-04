@@ -1,0 +1,17 @@
+server:
+  port: 8090
+
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: consumerGroup1
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
+      value-deserializer: test.kafka.demo.project.mapper.deserializer.CustomDeserializer
+    producer:
+      bootstrap-servers: localhost:9092
+      client-id: clientId1
+      enable-auto-commit : false
+      key-deserializer: org.apache.kafka.common.serialization.LongSerializer
+      value-deserializer: test.kafka.demo.project.mapper.serializer.CustomSerializers

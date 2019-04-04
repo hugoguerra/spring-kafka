@@ -1,4 +1,4 @@
-package test.kafka.demo.project.constants;
+package test.kafka.demo.project.main.constants;
 
 public class IKafkaConstants {
 
