@@ -1,6 +1,18 @@
 ## KAFKA
 This repository has two kafka examples using custom serializer and deserializer for test.kafka.demo.project.dto.ClientDTO object. The second one in Spring Boot 2.
 
+###### Pre-steps
+You need to install kafka before to start the test...
+Follow the steps that is in this link https://tecadmin.net/install-apache-kafka-ubuntu/.
+
+There are some points to update.
+- ```sudo apt install default-jdk``` -> this will install the lastest version.
+- ```wget http://www-us.apache.org/dist/kafka/1.0.1/kafka_2.12-1.0.1.tgz``` -> This is an old version. You can find a new one on this page http://www-us.apache.org/dist/kafka/
+
+For this example we are using:
+http://www-us.apache.org/dist/kafka/2.2.0/kafka_2.11-2.2.0.tgz
+
+
 ###### Dependencies
 
 
