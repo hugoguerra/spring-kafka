@@ -75,6 +75,8 @@ spring:
 ###### KAFKA MAIN EXAMPLE
 This example no need to run in spring boot. There a class test.kafka.demo.project.main.MainKafka that execute the part of the Producer and Consumer.
 
+*** Everything inside the ```test.kafka.demo.project.main```package is for this main example.
+
 ###### KAFKA SPRING BOOT
 execute ```./gradlew clean build -x test bootRun``` to start the application.
 
