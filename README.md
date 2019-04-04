@@ -95,10 +95,14 @@ execute ```./gradlew clean build -x test bootRun``` to start the application.
 Two methods to consume:
 
 Producer Resource:
-POST -> 
-
-Consumer Resource:
-POST -> 
+```json
+POST -> http://localhost:8090/kafka/message/producer
+{
+  "id":"1",
+  "name":"Client Test",
+  "age":44
+}
+```
 
 
 ###### KAFKA TOOL
