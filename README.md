@@ -2,6 +2,10 @@
 This repository has two kafka examples using custom serializer and deserializer for test.kafka.demo.project.dto.ClientDTO object. The second one in Spring Boot 2.
 
 ###### Dependencies
+
+
+```gradle
+
 plugins {
 	id 'org.springframework.boot' version '2.1.3.RELEASE'
 	id 'java'
@@ -13,6 +17,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
 }
+```
 
 ###### Configuration
 In these two example will be use the same serializer configuration, just in different ways.
@@ -52,12 +57,12 @@ public class ConsumerCreator ... {
 ```
 
 > For the spring-boot example
-```
+```yaml
 spring:
   kafka:
     consumer:
       bootstrap-servers: localhost:9092
-      group-id: group-id
+      group-id: consumerGroup1
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.LongSerializer
       value-deserializer: test.kafka.demo.project.mapper.deserializer.CustomDeserializer
