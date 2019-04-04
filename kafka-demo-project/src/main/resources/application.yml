@@ -2,6 +2,8 @@ server:
   port: 8090
 
 spring:
+  main:
+    allow-bean-definition-overriding: true
   kafka:
     consumer:
       bootstrap-servers: localhost:9092
@@ -14,4 +16,4 @@ spring:
       client-id: clientId1
       enable-auto-commit : false
       key-deserializer: org.apache.kafka.common.serialization.LongSerializer
-      value-deserializer: test.kafka.demo.project.mapper.serializer.CustomSerializers
+      value-deserializer: test.kafka.demo.project.mapper.serializer.CustomSerializer

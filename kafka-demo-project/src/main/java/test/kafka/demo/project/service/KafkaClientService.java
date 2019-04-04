@@ -21,7 +21,9 @@ public class KafkaClientService {
 
     public boolean producer(ClientDTO client) {
         try {
-            LOGGER.debug("Producer Message -> " + client.toString());
+            System.out.println(">>>>>>>>>>>>>>>>>>");
+            System.out.println("Producer Message -> " + client.toString());
+            System.out.println("<<<<<<<<<<<<<<<<<<");
             kafkaTemplate.send(TOPIC_NAME_BOOT, client);
             return true;
         } catch (Exception e) {
@@ -32,9 +34,11 @@ public class KafkaClientService {
     }
 
     @KafkaListener(topics = TOPIC_NAME_BOOT)
-    public boolean consumer(ConsumerRecord<?, ?> consumerRecord) {
+    public boolean consumer(ClientDTO clientDTO) {
         try {
-            LOGGER.debug("Producer Message -> " + consumerRecord.toString());
+            System.out.println("**********************");
+            System.out.println("Consumer Message ->" + clientDTO.toString());
+            System.out.println("**********************");
             return true;
         } catch (Exception e) {
             LOGGER.error("There was an error - consumer message", e);
