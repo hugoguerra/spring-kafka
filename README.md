@@ -3,7 +3,7 @@ This repository has two kafka examples using custom serializer and deserializer 
 
 ###### Pre-steps
 You need to install kafka before to start the test...
-Follow the steps that is in this link https://tecadmin.net/install-apache-kafka-ubuntu/.
+Follow the steps that are in this link https://tecadmin.net/install-apache-kafka-ubuntu/.
 
 There are some points to update.
 - ```sudo apt install default-jdk``` -> this will install the lastest version.
