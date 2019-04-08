@@ -10,7 +10,7 @@ There are some points to update.
 - ```wget http://www-us.apache.org/dist/kafka/1.0.1/kafka_2.12-1.0.1.tgz``` -> This is an old version. You can find a new one on this page http://www-us.apache.org/dist/kafka/
 
 For this example we are using:
-http://www-us.apache.org/dist/kafka/2.2.0/kafka_2.11-2.2.0.tgz
+```http://www-us.apache.org/dist/kafka/2.2.0/kafka_2.11-2.2.0.tgz```
 
 
 ###### Dependencies
@@ -92,7 +92,7 @@ This example no need to run in spring boot. There a class test.kafka.demo.projec
 ###### KAFKA SPRING BOOT
 execute ```./gradlew clean build -x test bootRun``` to start the application.
 
-Two methods to consume:
+> Http method:
 
 Producer Resource:
 ```json
@@ -104,6 +104,8 @@ POST -> http://localhost:8090/kafka/message/producer
 }
 ```
 
+> Kafka Listner
+The class ```KafkaListenerService``` is the responsable for consume the client registered.
 
 ###### KAFKA TOOL
 If you want to see the information in kafka, you could install a opensource tool like KafkaTool.

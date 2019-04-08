@@ -31,14 +31,4 @@ public class KafkaClientResource {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
-
-//    @PostMapping(value = "/consumer",
-//            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-//    public ResponseEntity<Boolean> getMessages() {
-//        try {
-//            return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.consumer());
-//        } catch (Exception e) {
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
-//        }
-//    }
 }
