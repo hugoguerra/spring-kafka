@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.common.serialization.Serializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import test.kafka.demo.project.dto.ClientDTO;
+import test.kafka.demo.project.main.dto.ClientDTO;
 
 import java.util.Map;
 

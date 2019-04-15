@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import test.kafka.demo.project.dto.ClientDTO;
+import test.kafka.demo.project.ClientAvro;
 import test.kafka.demo.project.service.KafkaClientService;
 
 @RestController
@@ -24,7 +24,7 @@ public class KafkaClientResource {
 
     @PostMapping(value = "/producer",
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Boolean> sendMessage(@RequestBody ClientDTO client) {
+    public ResponseEntity<Boolean> sendMessage(@RequestBody ClientAvro client) {
         try {
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.producer(client));
         } catch (Exception e) {

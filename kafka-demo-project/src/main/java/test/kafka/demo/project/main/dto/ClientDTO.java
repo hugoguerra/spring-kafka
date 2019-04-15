@@ -1,4 +1,4 @@
-package test.kafka.demo.project.dto;
+package test.kafka.demo.project.main.dto;
 
 public class ClientDTO {
 

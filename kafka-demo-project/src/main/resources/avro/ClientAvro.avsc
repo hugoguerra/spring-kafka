@@ -1,0 +1,11 @@
+{
+ "type": "record",
+ "namespace": "test.kafka.demo.project",
+ "name": "ClientAvro",
+ "version": "1",
+ "fields": [
+    {"name": "id", "type": "long", "doc": "Id's client"},
+    {"name": "name", "type": "string", "doc": "Name's client"},
+    {"name": "age", "type": "int", "doc": "Age'sclient"}
+ ]
+}

@@ -1,21 +1,61 @@
+buildscript {
+	ext {
+		avroVersion = '1.8.2'
+		confluentVersion = "3.3.1"
+		kafkaAvroSerializerVersion = '3.2.1'
+	}
+
+	dependencies {
+		//plugin needed to generate POJO from Avro schema
+		classpath("com.commercehub.gradle.plugin:gradle-avro-plugin:0.14.2")
+	}
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.1.3.RELEASE'
 	id 'java'
 }
 
+repositories {
+	mavenCentral()
+
+	//this for kafka configuration class
+	maven {
+		url "http://packages.confluent.io/maven/"
+	}
+}
+
 apply plugin: 'io.spring.dependency-management'
+apply plugin: "com.commercehub.gradle.plugin.avro-base"
 
 group = 'test'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
-repositories {
-	mavenCentral()
-}
 
 dependencies {
+	compile "org.apache.avro:avro:${avroVersion}"
+	//this for kafka configuration class
+	compile ("io.confluent:kafka-avro-serializer:${kafkaAvroSerializerVersion}") {
+		exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+	}
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.kafka:spring-kafka'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
 }
+
+//gradle-avro-plugin setting
+avro {
+	//convert all string type to "java.lang.CharSequence"
+	stringType = "CharSequence"
+}
+
+task generateAvro(type: com.commercehub.gradle.plugin.avro.GenerateAvroJavaTask) {
+	//point plugin to folder with avro schemas
+	source("src/main/resources/avro")
+	//point plugin to folder with generated POJOs
+	outputDir = file("src/main/java/avro")
+}
+
+compileJava.source(generateAvro.outputs)

@@ -10,10 +10,10 @@ spring:
       group-id: consumerGroup1
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
-      value-deserializer: test.kafka.demo.project.mapper.deserializer.CustomDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
     producer:
       bootstrap-servers: localhost:9092
       client-id: clientId1
       enable-auto-commit : false
-      key-deserializer: org.apache.kafka.common.serialization.LongSerializer
-      value-deserializer: test.kafka.demo.project.mapper.serializer.CustomSerializer
+      key-serializer: org.apache.kafka.common.serialization.LongSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer

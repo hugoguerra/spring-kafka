@@ -5,7 +5,7 @@ import org.apache.kafka.common.serialization.LongDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import test.kafka.demo.project.main.constants.IKafkaConstants;
-import test.kafka.demo.project.dto.ClientDTO;
+import test.kafka.demo.project.main.dto.ClientDTO;
 import test.kafka.demo.project.main.Runner;
 import test.kafka.demo.project.mapper.deserializer.CustomDeserializer;
 
